@@ -5,6 +5,7 @@ ENABLE_CORRECTION="true"
 export DEFAULT_USER="cedricmessiant"
 #export EDITOR='sublime'
 export EDITOR='vim'
+export ANDROID_HOME="${HOME}/tools/android-sdk-linux"
 
 source /home/cedricmessiant/tools/antigen/antigen.zsh
 
