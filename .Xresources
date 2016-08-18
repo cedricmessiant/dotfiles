@@ -1,0 +1,89 @@
+!!URxvt.font: 9x15
+!!URxvt.font: xft:Inconsolata:size=13
+!!URxvt.font: xft:Ubuntu Mono:size=13
+!!URxvt*background: black
+!!URxvt*foreground: grey
+
+
+!! on active les modules nécessaires
+!!URxvt.perl-ext: selection,mark-yank-urls
+!! on définit comment passer en mode "copie d'url": ici alt-u
+!!URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+!! on peut choisir de souligner les urls
+!!URxvt.underlineURLs: true
+!! on définit ici le navigateur par défaut (pour lancer une url sélectionnée avec entrée)
+!!URxvt.urlLauncher: firefox
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            5000
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           false
+/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
+URxvt*font: xft:Monospace:pixelsize=14
+URxvt*boldFont: xft:Monospace:pixelsize=14
+
+! Fix font space
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! Home and End keys
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+
+*foreground:   #c5c8c6
+*background:   #1d1f21
+*cursorColor:  #aeafad
+*color0:       #000000
+*color1:       #912226
+*color2:       #778900
+*color3:       #ae7b00
+*color4:       #1d2594
+*color5:       #682a9b
+*color6:       #2b6651
+*color7:       #929593
+*color8:       #666666
+*color9:       #cc6666
+*color10:      #b5bd68
+*color11:      #f0c674
+*color12:      #81a2be
+*color13:      #b294bb
+*color14:      #8abeb7
+*color15: #ecebec
+
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! More themes here: https://davedavenport.github.io/rofi/p05-Themes.html
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #002b37, #002b37, #003642
+rofi.color-normal: #002b37, #819396, #002b37, #003642, #819396
+rofi.color-active: #002b37, #008ed4, #002b37, #003642, #008ed4
+rofi.color-urgent: #002b37, #da4281, #002b37, #003642, #da4281
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
