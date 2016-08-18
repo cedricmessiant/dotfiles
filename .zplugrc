@@ -1,0 +1,46 @@
+# zplug
+source ~/.zplug/init.zsh
+
+zplug "willghatch/zsh-saneopt"
+
+# Set the priority when loading
+# e.g., zsh-syntax-highlighting must be loaded
+# after executing compinit command and sourcing other plugins
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+
+zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
+
+zplug "plugins/common-aliases", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/tmuxinator", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/python", from:oh-my-zsh
+zplug "plugins/node", from:oh-my-zsh
+zplug "plugins/npm", from:oh-my-zsh
+zplug "plugins/virtualenv", from:oh-my-zsh
+# jsontools
+# git-extras
+# docker
+# debian
+# command-not-found
+# z ou autojump ou pj
+
+# we must load this plugin after zsh-syntax-highlighting
+zplug "zsh-users/zsh-history-substring-search", nice:10
+bindkey $key_info[PageUp] history-substring-search-up
+bindkey $key_info[PageDown] history-substring-search-down
+
+#zplug "themes/duellj", from:oh-my-zsh
+zplug "themes/pygmalion", from:oh-my-zsh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
