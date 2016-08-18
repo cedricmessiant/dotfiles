@@ -1,0 +1,14 @@
+name: pst
+root: ~/workspace/server.project
+windows:
+  - buildout:
+      layout: horizontal
+      panes:
+        - bin/instance1 fg
+        - export ENV=test && echo ${ENV}
+  - svn: svn st
+  - imio.products.pst:
+      root: ~/workspace/server.project/src/imio.project.pst
+      panes:
+        - gst
+        - workon i18n

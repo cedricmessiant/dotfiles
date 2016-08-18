@@ -1,0 +1,14 @@
+name: dmsmail
+root: ~/workspace/server.dmsmail
+windows:
+  - buildout:
+      layout: horizontal
+      panes:
+        - bin/instance1 fg
+        - export ENV=test && echo ${ENV}
+  - svn: svn st
+  - imio.dms.mail:
+      root: ~/workspace/server.dmsmail/src/imio.dms.mail
+      panes:
+        - svn st
+        - workon i18n
