@@ -16,3 +16,12 @@ windows:
   - git:
       panes:
         - gst
+  - i18n:
+      root: ~/workspace/webpro/src/webpro/ged/locales
+      panes:
+        - workon i18n
+  - webpro.theme:
+      root: ~/workspace/webpro/develop/webpro.theme/src/webpro/theme
+      panes:
+        - gst
+        - cd webprotheme/assets/css
