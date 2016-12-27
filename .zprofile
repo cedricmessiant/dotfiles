@@ -9,9 +9,11 @@ PATH="${PATH}:/home/cedricmessiant/node_modules/.bin"
 PATH="${PATH}:/home/cedricmessiant/node_modules/.bin"
 PATH="${PATH}:/usr/lib/chromium-browser/"
 
-# ANDROID_SDK="$HOME/tools/android-sdk-linux"
-# PATH="$ANDROID_SDK/platform-tools/:$ANDROID_SDK/tools/:$PATH"
+ANDROID_SDK="$HOME/tools/android-sdk-linux"
+PATH="$ANDROID_SDK/platform-tools/:$ANDROID_SDK/tools/:$PATH"
 export PATH
+
+export ANDROID_HOME="$HOME/tools/android-sdk-linux"
 
 source /etc/profile.d/infinality-settings.sh
 #export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
