@@ -10,6 +10,14 @@ svndiff() {
   svn diff "${@}" | colordiff | less -R
 }
 
+
+# add gems to PATH
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# fix bundler install
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+
+alias vi='vim'
+
 # human-friendly key identifiers
 zmodload zsh/terminfo
 typeset -gA key_info
@@ -117,3 +125,13 @@ source ~/.zplugrc
 
 #PROMPT='%{$fg[magenta]%}%n%{$reset_color%} @ %{$fg[yellow]%}%m%{$reset_color%} $ '
 #RPROMPT='[%*]'
+
+PATH="${PATH}:/home/cedric/bin"
+PATH="${PATH}:${HOME}/.npm-global/bin"
+PATH="${PATH}:/home/cedric/node_modules/.bin"
+PATH="${PATH}:/home/cedric/node_modules/.bin"
+PATH="${PATH}:/usr/lib/chromium-browser/"
+PATH="${HOME}/.yarn/bin:$PATH"
+ANDROID_SDK="$HOME/tools/android-sdk-linux"
+PATH="${ANDROID_SDK}/platform-tools/:${ANDROID_SDK}/tools/:$PATH"
+export PATH
