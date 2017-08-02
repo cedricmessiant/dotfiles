@@ -16,6 +16,7 @@ export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # fix bundler install
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
+[[ -f .zsh_aliases ]] && source .zsh_aliases
 alias vi='vim'
 
 # human-friendly key identifiers
