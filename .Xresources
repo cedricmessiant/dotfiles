@@ -73,7 +73,7 @@ URxvt.keysym.End: \033[4~
 *color12:      #81a2be
 *color13:      #b294bb
 *color14:      #8abeb7
-*color15: #ecebec
+*color15:      #ecebec
 
 
 ! ------------------------------------------------------------------------------
