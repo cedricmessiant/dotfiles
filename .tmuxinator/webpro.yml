@@ -2,14 +2,14 @@ name: webpro
 root: ~/workspace/webpro
 windows:
   - buildout:
-      layout: horizontal
+      layout: main-horizontal
       panes:
         - ./run.sh
         - export ENV=test && echo ${ENV}
         # ./run.sh test -s webpro.ged
   - js:
       root: ~/workspace/webpro/src/webpro/ged/javascripts
-      layout: horizontal
+      layout: main-vertical
       panes:
         - npm start
         - npm run test:watch

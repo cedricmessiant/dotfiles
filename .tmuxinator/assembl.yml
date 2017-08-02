@@ -1,0 +1,15 @@
+name: assembl
+root: ~/workspace/assembl
+windows:
+  - server:
+      layout: main-horizontal
+      panes:
+        - "source venv/bin/activate && supervisord && supervisorctl start dev:"
+  - js:
+      root: ~/workspace/assembl/assembl/static2
+      layout: main-vertical
+      panes:
+        - npm run test:watch
+  - git:
+      panes:
+        - gst

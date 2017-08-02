@@ -1,0 +1,16 @@
+name: novaideo
+root: ~/workspace/nova-ideo
+windows:
+  - buildout:
+      layout: horizontal
+      panes:
+        - ./run.sh
+  - git:
+      panes:
+        - gst
+  - native:
+      root: ~/workspace/novaideo_native
+      layout: main-vertical
+      panes:
+        - npm start
+        - npm test

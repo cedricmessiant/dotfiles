@@ -1,0 +1,19 @@
+name: mpisi
+root: ~/workspace/mpi.si
+windows:
+  - buildout:
+      layout: main-horizontal
+      panes:
+        - bin/instance1 fg
+        - bin/zeoserver start && bin/worker start && docker-compose up
+  - git:
+      panes:
+        - gst
+  - i18n:
+      root: ~/workspace/mpi.si/src/mpi/si/locales
+      panes:
+        - workon i18n
+  - tests:
+      root: ~/workspace/mpi.si
+      panes:
+        - export ROBOT_BROWSER=chrome
