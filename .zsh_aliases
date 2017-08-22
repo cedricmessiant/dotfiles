@@ -1,0 +1,1 @@
+alias suzope="sudo su -s /bin/zsh - zope"
