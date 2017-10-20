@@ -32,7 +32,9 @@ bindkey $key_info[PageUp] history-substring-search-up
 bindkey $key_info[PageDown] history-substring-search-down
 
 #zplug "themes/duellj", from:oh-my-zsh
-zplug "themes/pygmalion", from:oh-my-zsh
+#zplug "themes/pygmalion", from:oh-my-zsh
+# zsh theme: https://github.com/denysdovhan/spaceship-zsh-theme
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
