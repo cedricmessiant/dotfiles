@@ -136,3 +136,9 @@ PATH="${HOME}/.yarn/bin:$PATH"
 ANDROID_SDK="$HOME/tools/android-sdk-linux"
 PATH="${ANDROID_SDK}/platform-tools/:${ANDROID_SDK}/tools/:$PATH"
 export PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by travis gem
+[ -f /home/cedricmessiant/.travis/travis.sh ] && source /home/cedricmessiant/.travis/travis.sh
