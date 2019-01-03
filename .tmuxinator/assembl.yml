@@ -9,7 +9,8 @@ windows:
       root: ~/workspace/assembl/assembl/static2
       layout: main-vertical
       panes:
-        - npm run test:watch
+        - source ../../venv/bin/activate
+#        - npm run test:watch
   - git:
       panes:
         - gst
