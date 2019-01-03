@@ -10,15 +10,15 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # dark blue theme
-#set $bg-color            #2f343f
-#set $inactive-bg-color   #2f343f
-#set $text-color          #f3f4f5
-#set $inactive-text-color #676E7D
-# black theme
-set $bg-color            #000000
-set $inactive-bg-color   #101010
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
+# black theme
+# set $bg-color            #000000
+# set $inactive-bg-color   #101010
+# set $text-color          #f3f4f5
+# set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
 set $mod Mod4
@@ -60,12 +60,13 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+i exec dmenu_run
-bindsym $mod+y exec rofi -show run -lines 3 -eh 2 -opacity "85" -fullscreen -padding 300 -bw 0 -font "Ubuntu 18"
+bindsym $mod+y exec rofi -show run -font "Ubuntu 18" -lines 6 -eh 2 -padding 200 -fullscreen
 # -font "System San Francisco Display 18"
-#
-#-bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
-# -width 100 -padding 400
-# -font -bc -bg -fg -hlbg
+bindsym $mod+Shift+v exec rofi -modi "clipboard:greenclip print" -show clipboard
+bindsym $mod+Shift+z exec ~/bin/rofi-power
+bindsym $mod+Shift+t exec python3 ~/bin/wordreference.py fr fr en
+bindsym $mod+Shift+s exec python3 ~/bin/wordreference.py fr en fr
+bindsym $mod+Shift+f exec gnome-control-center sound
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -137,21 +138,38 @@ set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace0 "10: "
-set $workspace11 "11: "
+set $workspace11 "11: |"
+set $workspace12 "12: ="
 
 
 # workspace default monitors
-workspace $w_browser output DP2-3
-workspace $w_terminal output DP2-3
-workspace $w_editor output DP2-3
-workspace $w_chat output DP2-3
-workspace $w_mail output DP2-3
-workspace $workspace6 output DP2-3
-workspace $workspace7 output DP2-3
-workspace $workspace8 output DP2-3
-workspace $workspace9 output DP2-3
-workspace $workspace0 output DP2-3
-workspace $workspace11 output DP2-2
+# workspace $w_browser output DP-2-1
+# workspace $w_terminal output DP-2-1
+# workspace $w_editor output DP-2-1
+# workspace $w_chat output DP-2-1
+# workspace $w_mail output DP-2-1
+# workspace $workspace6 output DP-2-1
+# workspace $workspace7 output DP-2-1
+# workspace $workspace8 output DP-2-1
+# workspace $workspace9 output DP-2-1
+# workspace $workspace0 output DP-2-1
+# workspace $workspace11 output DP-2-3
+# workspace $workspace12 output eDP-1
+
+# bureau DP-2-1 vertical et DP-2-3 main
+workspace $w_browser output DP-2-3
+workspace $w_terminal output DP-2-3
+workspace $w_editor output DP-2-3
+workspace $w_chat output DP-2-3
+workspace $w_mail output DP-2-3
+workspace $workspace6 output DP-2-3
+workspace $workspace7 output DP-2-3
+workspace $workspace8 output DP-2-3
+workspace $workspace9 output DP-2-3
+workspace $workspace0 output DP-2-3
+workspace $workspace11 output DP-2-2
+workspace $workspace12 output eDP-1
+
 
 # switch to workspace
 bindsym $mod+quotedbl workspace $w_browser
@@ -165,6 +183,7 @@ bindsym $mod+minus workspace $workspace8
 bindsym $mod+slash workspace $workspace9
 bindsym $mod+asterisk workspace $workspace0
 bindsym $mod+equal workspace $workspace11
+bindsym $mod+percent workspace $workspace12
 
 # move focused container to workspace $workspace
 bindsym $mod+Shift+quotedbl move container to workspace $w_browser
@@ -178,6 +197,7 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+asterisk move container to workspace $workspace0
 bindsym $mod+Shift+equal move container to workspace $workspace11
+bindsym $mod+Shift+percent move container to workspace $workspace12
 
 # reload the configuration file
 bindsym $mod+Shift+l reload
@@ -185,8 +205,8 @@ bindsym $mod+Shift+l reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+z exit
-bindsym $mod+Shift+s exec "i3lock && systemctl suspend"
+#bindsym $mod+Shift+z exit
+#bindsym $mod+Shift+s exec "i3lock && systemctl suspend"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -290,10 +310,15 @@ exec spotify
 exec slack
 exec claws-mail
 #exec --no-startup-id i3-msg 'workspace $w_terminal; exec urxvt'
-
+exec --no-startup-id ~/bin/greenclip daemon
 exec compton -bf
+#http://jonls.dk/redshift/
+exec redshift
 
 # wallpaper
-#exec_always feh --bg-scale /home/cedricmessiant/Images/wallpapers/current.jpg
+# exec_always feh --bg-scale ~/Images/wallpapers/current.jpg
+#exec feh --bg-fill /home/cedric/Images/wallpapers/solarized.png
+exec --no-startup-id ~/bin/setup_monitors.py
+exec feh --bg-fill /usr/share/backgrounds/adapta/tealized.jpg
 
 # http://www.omgubuntu.co.uk/2016/01/essential-guide-to-corebird-twitter-app-for-linux/?utm_source=slideshow
