@@ -2,6 +2,9 @@
 	name = Cédric Messiant
 	email = cedricmessiant@ecreall.com
 
+[pull]
+    ff = only
+
 [push]
     default = simple
 
